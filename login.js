@@ -109,24 +109,52 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
         return (identLower === email || identifier === studentId) && password === pass;
     });
 
-    if (!user) {
-        alert("Invalid login details. Create an account first.");
+    if (user) {
+        localStorage.setItem(
+            "currentUser",
+            JSON.stringify({
+                fullName: user.fullName || "",
+                email: user.email || "",
+                studentId: user.studentId || "",
+                course: user.course || "",
+                department: user.department || "",
+                createdAt: user.createdAt || "",
+            })
+        );
+        window.location.href = "homeplage.html";
         return;
     }
 
-    localStorage.setItem(
-        "currentUser",
-        JSON.stringify({
-            fullName: user.fullName || "",
-            email: user.email || "",
-            studentId: user.studentId || "",
-            course: user.course || "",
-            department: user.department || "",
-            createdAt: user.createdAt || "",
-        })
-    );
+    // If localStorage login fails (e.g., account was created via the Vercel /api backend),
+    // try the serverless login endpoint as a fallback.
+    try {
+        const res = await fetch("/api/auth/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            credentials: "include",
+            body: JSON.stringify({ identifier, password }),
+        });
 
-    window.location.href = "homeplage.html";
+        if (res.ok) {
+            localStorage.setItem(
+                "currentUser",
+                JSON.stringify({
+                    fullName: "",
+                    email: identifier.includes("@") ? identifier : "",
+                    studentId: identifier.includes("@") ? "" : identifier,
+                    course: "",
+                    department: "",
+                    createdAt: new Date().toISOString(),
+                })
+            );
+            window.location.href = "homeplage.html";
+            return;
+        }
+    } catch {
+        // ignore and show the standard error below
+    }
+
+    alert("Invalid login details. Create an account first.");
 });
 
 const adminButton = document.querySelector(".admin-btn");
