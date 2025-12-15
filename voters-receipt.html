@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voter's Receipt</title>
+  <link rel="stylesheet" href="voters-receipt.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+</head>
+<body>
+  <div class="phone">
+    <div class="screen">
+      <div class="top-header">
+        <a href="homeplage.html" class="back-btn">&#x276E;</a>
+        <h1 class="page-title">Receipt</h1>
+      </div>
+
+      <div class="receipt-box">
+        <p class="receipt-header">Voter's Receipt</p>
+
+        <div id="receiptStateEmpty" class="receipt-empty" style="display:none;">
+          <p><strong>No receipt found.</strong></p>
+          <p class="receipt-note">Please submit your vote first.</p>
+        </div>
+
+        <div id="receiptStateLoaded" style="display:none;">
+          <div class="receipt-details" id="receiptDetails">
+            <p><strong>Receipt ID:</strong> <span id="receiptId"></span></p>
+            <p><strong>Timestamp:</strong> <span id="receiptTimestamp"></span></p>
+            <div class="vote-summary" id="voteSummary"></div>
+            <p class="receipt-note">Thank you for your participation!</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="primary-btn" type="button" id="backHomeBtn">Back to Home</button>
+    </div>
+  </div>
+
+  <script src="voters-receipt.js"></script>
+</body>
+</html>

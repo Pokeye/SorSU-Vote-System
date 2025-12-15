@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Sign-in</title>
+    <link rel="stylesheet" href="admin sign-in.css"> 
+</head>
+<body>
+
+<div class="phone">
+    <div class="screen"> 
+        
+        <div class="top-header">
+            <a href="admin.html" class="back-btn">&#x276E;</a>
+            <h1 class="page-title">Admin Sign-in</h1>
+        </div>
+
+        <div class="admin-content">
+            
+            <div class="admin-logo-container">
+                <img src="logo 1.png" alt="System Voting Logo" class="system-logo">
+            </div>
+
+            <p class="admin-description">
+                <b>Restricted portal for system administrators only! Admin authentication 
+                required access on the system's backend and analytics dashboard.</b>
+            </p>
+
+            <hr class="separator">
+
+            <div class="input-group">
+                <label for="accessCode">Access Code</label>
+                <div class="password-wrapper">
+                    <input type="password" id="accessCode"> 
+                    <span class="password-toggle" data-target="accessCode">
+                    </span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="adminKey">Admin Key</label>
+                <div class="password-wrapper">
+                    <input type="password" id="adminKey">
+                    <span class="password-toggle" data-target="adminKey">
+                    </span>
+                </div>
+            </div>
+
+            <a href="login.html" class="login-btn">Log in</a>
+        </div>
+        
+    </div>
+
+</div>
+
+<script src="admin sign-in.js"></script>
+</body>
+</html>

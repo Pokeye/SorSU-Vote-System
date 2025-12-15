@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="homepagee.css">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <title>Homepage UI</title>
+</head>
+<body>
+
+<div class="phone">
+  <div class="screen">
+
+    <h1 class="page-title">Homepage</h1>
+    <div class="org-name-header" id="org-name-display"></div>
+
+    <!-- 3D Carousel -->
+    <div class="swiper-container one">
+      
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" data-name="SKC"><img src="skc.jpg" alt="SKC"></div>
+        <div class="swiper-slide" data-name="JPIA"><img src="jpia.jpg" alt="JPIA"></div>
+        <div class="swiper-slide" data-name="RCYC"><img src="rcyc.jpg" alt="RCYC"></div>
+        <div class="swiper-slide" data-name="Book Club"><img src="lib.jpg" alt="Book Club"></div>
+        <div class="swiper-slide" data-name="Sports Club"><img src="arts nd dance.jpg" alt="STAND"></div>
+        <div class="swiper-slide" data-name="NSTP"><img src="NSTP.jpg" alt="NSTP"></div>
+        <div class="swiper-slide" data-name="Freethinker"><img src="freet.jpg" alt="Freethinker"></div>
+        <div class="swiper-slide" data-name="SSC"><img src="ssc.jpg" alt="SSC"></div>
+      </div>
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Org Name Display -->
+    <div class="org-label" id="org-name-display-secondary"></div>
+
+    <!-- Countdown Card -->
+    <div class="countdown-card">
+      <div class="countdown-row">
+        <div class="count-box"><div id="days">0</div><div class="label">Days</div></div>
+        <div class="count-box"><div id="hours">0</div><div class="label">Hours</div></div>
+        <div class="count-box"><div id="mins">0</div><div class="label">Mins</div></div>
+        <div class="count-box"><div id="secs">0</div><div class="label">Secs</div></div>
+      </div>
+      <div class="status">Ongoing</div>
+      <a href="votingpage.html" class="vote-link">
+        <button class="vote-btn">Vote Now</button> </a>
+
+      
+
+    </div>
+
+    <!-- Organization List -->
+    <h2 class="section-title">Orgs and Nominated Candidates</h2>
+    <div class="org-grid">
+
+     <a href="skc_candidates.html" class="org-link">
+          <div class="org-tile">
+              <img src="skc.jpg">
+              <div class="org-name">SKC</div>
+          </div>
+    </a>
+    <a href="skc_candidates.html" class="org-link">
+        <div class="org-tile">
+            <img src="jpia.jpg">
+            <div class="org-name">JPIA</div>
+        </div>
+    </a>
+    <a href="skc_candidates.html" class="org-link">
+        <div class="org-tile">
+            <img src="rcyc.jpg">
+            <div class="org-name">RCYC</div>
+        </div>
+    </a>
+    <a href="skc_candidates.html" class="org-link">
+        <div class="org-tile">
+            <img src="lib.jpg">
+            <div class="org-name">Book Club</div>
+        </div>
+    </a>
+    <a href="skc_candidates.html" class="org-link">
+        <div class="org-tile">
+            <img src="arts nd dance.jpg">
+            <div class="org-name">STAND</div>
+        </div>
+    </a>
+    <a href="skc_candidates.html" class="org-link">
+        <div class="org-tile">
+            <img src="NSTP.jpg">
+            <div class="org-name">NSTP</div>
+        </div>
+    </a>
+    <a href="skc_candidates.html" class="org-link">
+        <div class="org-tile">
+            <img src="freet.jpg">
+            <div class="org-name">Freethinker</div>
+        </div>
+    </a>
+    <a href="skc_candidates.html" class="org-link">
+        <div class="org-tile">
+            <img src="ssc.jpg">
+            <div class="org-name">SSC</div>
+        </div>
+    </a>
+</div>
+
+  </div>
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav">
+    <a class="nav-btn" href="nominees.html">🗎</a>
+    <a class="nav-btn" href="notification.html">⩍</a>
+    <a class="nav-btn" href="homeplage.html">🏠︎</a>
+    <a class="nav-btn" href="me.html">👤</a>
+    <a class="nav-btn" href="leaderboards.html">📰</a>
+  </nav>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="homepage.js"></script>
+</body>
+</html>

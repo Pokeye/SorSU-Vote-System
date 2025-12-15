@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Phone frame */
+.phone {
+  width: 360px;
+  max-width: 95%;
+  height: 720px;
+  background-color: #fff;
+  border-radius: 40px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Screen */
+.screen {
+  width: 100%;
+  height: 100%;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Bar */
+.top-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #000;
+  position: absolute;
+  left: 0;
+}
+
+.top-bar h1 {
+  flex: 1;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* Form */
+form {
+  margin-top: 60px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding: 12px 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.mail-icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+.reset-btn {
+  width: 100%;
+  background-color: #d40000;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reset-btn:hover {
+  background-color: #b80000;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .phone {
+    width: 95%;
+    height: 650px;
+    border-radius: 35px;
+  }
+
+  .screen {
+    padding: 30px 20px;
+  }
+
+  .reset-btn {
+    padding: 14px 0;
+  }
+}

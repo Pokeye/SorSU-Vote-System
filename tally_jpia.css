@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; background-color: #f5f5f5; height: 100vh; display: flex; justify-content: center; align-items: center; }
+
+.phone {
+  width: 360px; max-width: 95%; height: 720px; background-color: #fff;
+  border-radius: 40px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  position: relative; overflow: hidden; 
+}
+.screen { width: 100%; height: 100%; padding: 0 25px 100px; overflow-y: scroll; }
+
+/* --- Top Header & Page Titles --- */
+.top-header { display: flex; align-items: center; padding: 10px 0; margin-bottom: 5px; }
+.back-btn { font-size: 24px; font-weight: 700; color: #333; text-decoration: none; padding: 0 10px 0 0; }
+.page-title { font-size: 24px; font-weight: 600; color: #333; flex-grow: 1; text-align: center; transform: translateX(-15px); }
+
+.results-date { font-size: 16px; font-weight: 600; color: #555; margin-bottom: 2px; }
+.results-subdate { font-size: 12px; color: #888; margin-bottom: 15px; }
+
+/* --- Organization Carousel Styles --- */
+.org-carousel {
+    width: calc(100% + 50px); 
+    margin-left: -25px; 
+    overflow-x: scroll; 
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none;  
+    margin-bottom: 25px;
+}
+.org-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-wrapper {
+    display: flex;
+    padding: 0 25px; 
+    gap: 15px; 
+}
+
+a.carousel-link {
+    text-decoration: none; 
+    color: inherit; 
+    flex: 0 0 130px; 
+}
+
+.carousel-slide {
+    flex: 1 1 100%; 
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent; 
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s, border 0.3s, background-color 0.3s;
+}
+
+/* Style for the active slide (used on tally pages) */
+.carousel-slide.active-org-slide {
+    background-color: #ffe0e0; 
+    border: 2px solid #a90000; 
+    box-shadow: 0 4px 15px rgba(169, 0, 0, 0.2); 
+}
+
+.carousel-org-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-org-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.carousel-tally {
+    font-size: 11px;
+    color: #555;
+    line-height: 1.3;
+}
+
+
+/* --- Results Card Styles (Chart.js Containers) --- */
+.results-card {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.position-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* --- REVISED CANDIDATE ITEM STRUCTURE --- */
+.candidate-result-item {
+    margin-bottom: 15px;
+    position: relative; 
+}
+
+/* New container for the name and percentage row */
+.candidate-header-row {
+    display: flex;
+    justify-content: space-between; /* Pushes name/percentage to opposite sides */
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.candidate-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    /* Removed margin-bottom since it's now a flex item */
+    margin-bottom: 0; 
+    white-space: nowrap; /* Prevent candidate name from wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px; /* Space between name and percentage */
+}
+
+.candidate-party {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+/* Percentage is now a sibling of candidate name */
+.percentage-label {
+    font-size: 16px; /* Slightly larger percentage for better visibility */
+    font-weight: 700; 
+    color: #a90000; 
+    flex-shrink: 0; /* Ensures the percentage label keeps its width */
+}
+/* --- END REVISED STRUCTURE --- */
+
+/* Chart.js Specific Styling - REVISED */
+.chart-wrapper {
+    position: relative;
+    height: 10px; /* Thinner bar is often better when placed under text */
+    width: 100%; /* Now takes full width of the card padding */
+    display: block; 
+    margin-top: 5px; /* Space between party name and bar */
+}
+
+
+/* --- Bottom Navigation (Standard) --- */
+.bottom-nav { 
+    position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); 
+    width: 300px; height: 72px; background: #000; border-radius: 40px; 
+    display: flex; align-items: center; justify-content: space-around; 
+    padding: 0 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.3); z-index: 10;
+}
+.nav-btn { 
+    background: transparent; border: none; color: white; width: 40px; height: 40px; 
+    font-size: 20px; text-decoration: none; display: flex; justify-content: center; align-items: center;
+}
+.nav-btn.active-leaderboards { 
+    background: #fff; color: #000; width: 48px; height: 48px; border-radius: 50%; 
+    transform: translateY(-16px); box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPIA Leaderboards</title>
+    <link rel="stylesheet" href="leaderboards.css"> <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div class="phone">
+    <div class="screen">
+        
+        <div class="top-header">
+            <a href="leaderboards.html" class="back-btn">&#x276E;</a>
+            <h1 class="page-title">Leaderboards</h1> </div>
+
+        <p class="results-date">Results</p>
+        <p class="results-subdate">As of November 21, 2025</p>
+
+        <div class="org-carousel">
+            <div class="carousel-wrapper">
+                
+                <a href="leaderboards.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="skc.jpg" alt="SKC Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">SKC</p>
+                    </div>
+                </a>
+
+                <a href="tally_jpia.html" class="carousel-link">
+                    <div class="carousel-slide active-org-slide">
+                        <img src="jpia.jpg" alt="JPIA Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">JPIA</p>
+                    </div>
+                </a>
+                
+                <a href="tally_rcyc.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="rcyc.jpg" alt="RCYC Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">RCYC</p>
+                    </div>
+                </a>
+                
+                <a href="tally_bookclub.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="lib.jpg" alt="Book Club Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">lib</p>
+                    </div>
+                </a>
+                <a href="arts and dance.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="arts nd dance.jpg" alt="Sports Club Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">Sports Club</p>
+                    </div>
+                </a>
+                <a href="nstp.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="NSTP.jpg" alt="NSTP Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">NSTP</p>
+                    </div>
+                </a>
+                <a href="freethinker.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="freet.jpg" alt="Freethinker Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">Freethinker</p>
+                    </div>
+                </a>
+                <a href="ssc.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="ssc.jpg" alt="SSC Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">SSC</p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+        <div id="resultsContainer">
+            
+            <div class="results-card">
+                <h2 class="position-title">President</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Kenny Rogers</p>
+                    </div>
+                    <p class="candidate-party">BSA-4-1</p>
+                    <div class="chart-wrapper"><canvas id="chart-jpia-president-samwise"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Vice President</h2> <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">James Reid</p>
+                    </div>
+                    <p class="candidate-party">BSA 3-1</p>
+                    <div class="chart-wrapper"><canvas id="chart-jpia-aragetay-dipwasc"></canvas></div>
+                </div>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Tiffany Young</p>
+                    </div>
+                    <p class="candidate-party">BSAIS-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-jpia-aragetay-somawlho"></canvas></div>
+                </div>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Mang Inasal</p>
+                    </div>
+                    <p class="candidate-party">BSE-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-jpia-aragetay-morisette"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Secretaryr</h2> <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Adobo Enthusiast</p>
+                    </div>
+                    <p class="candidate-party">BSA-4-1</p>
+                    <div class="chart-wrapper"><canvas id="chart-jpia-secacadier-bilbo"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Auditor</h2> <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Dia Ria</p>
+                    </div>
+                    <p class="candidate-party">BSE 4-1</p>
+                    <div class="chart-wrapper"><canvas id="chart-jpia-pippin-dipwasc"></canvas></div>
+                </div>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Two Left Feet</p>
+                    </div>
+                    <p class="candidate-party">BSAIS-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-jpia-pippin-tsowgagot"></canvas></div>
+                </div>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Morisette Amon</p>
+                    </div>
+                    <p class="candidate-party">BSE-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-jpia-pippin-morisette"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Membership Audit</h2> <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Frodo Took</p>
+                    </div>
+                    <p class="candidate-party">BSA-4-1</p>
+                    <div class="chart-wrapper"><canvas id="chart-jpia-fingerton-frodo"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">PIO</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Treebreebeard</p>
+                    </div>
+                    <p class="candidate-party">BSA-4-1</p>
+                    <div class="chart-wrapper"><canvas id="chart-jpia-pio-treebreebeard"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Business Manager</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Help Me</p>
+                    </div>
+                    <p class="candidate-party">BSA-4-1</p>
+                    <div class="chart-wrapper"><canvas id="chart-jpia-bm-canadiel"></canvas></div>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+    <nav class="bottom-nav">
+        <a class="nav-btn" href="nominees.html">🗎</a>
+        <a class="nav-btn" href="notification.html">⩍</a>
+        <a class="nav-btn" href="homeplage.html">🏠︎</a>
+        <a class="nav-btn" href="me.html">👤</a>
+        <a class="nav-btn" href="leaderboards.html">📰</a>
+    </nav>
+</div>
+
+<script src="tally_jpia.js"></script> </body>
+</html>

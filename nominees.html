@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomination Form</title>
+    <link rel="stylesheet" href="nomination.css">
+</head>
+<body>
+
+<div class="phone">
+    <div class="screen">
+
+        <div class="top-header">
+            <a href="homeplage.html" class="back-btn" onclick="history.back()">&#x276E;</a>
+            <h1 class="page-title">Nomination</h1>
+        </div>
+
+        <div class="container">
+            <label for="club-select">Select Club/Org</label>
+            <select id="club-select" class="input-select">
+                <option value="">-- Select --</option>
+                <option value="skc">SKC</option>
+                <option value="nstp">NSTP</option>
+                <option value="stand">STAND</option>
+                <option value="rcyc">RCYC</option>
+                <option value="ssc">SSC</option>
+                <option value="jpia">JPIA</option>
+                <option value="book-club">BOOK CLUB</option>
+                <option value="freethinker">FREETHINKER</option>
+            </select>
+
+            <label for="position-select">Position</label>
+            <select id="position-select" class="input-select">
+                <option value="">-- Select --</option> 
+            </select>
+
+            <div class="form-card details-card">
+                
+                <div class="row-group split-row">
+                    <div class="field-container wide">
+                        <label for="nominee-name">Nominee's Full name</label>
+                        <input type="text" id="nominee-name" class="input-box" value="">
+                    </div>
+                    <div class="field-container narrow">
+                        <label for="program-input">Program</label>
+                        <input type="text" id="program-input" class="input-box" value="">
+                    </div>
+                </div>
+
+                <div class="row-group split-row">
+                    <div class="field-container wide">
+                        <label>Nominee's Picture <span class="optional">(Optional)</span></label>
+                        <input type="file" id="image-upload-input" accept="image/*" style="display: none;">
+                        <div class="picture-box" id="picture-upload">
+                            <span class="camera-icon" id="camera-icon-placeholder">&#x1F4F7;</span>
+                            <img id="uploaded-image-preview" src="" alt="Nominee Picture Preview" style="display: none;">
+                        </div>
+                    </div>
+
+                    <div class="field-container narrow">
+                        <label for="year-input">Year</label>
+                        <input type="text" id="year-input" class="input-box" value="">
+                        
+                        <label for="block-input">Block</label>
+                        <input type="text" id="block-input" class="input-box" value="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-card reason-card">
+                <label for="reason-input">Reason for Nomination</label>
+                <textarea id="reason-input" class="input-textarea"></textarea>
+
+                <label class="confirm-checkbox">
+                    <input type="checkbox" id="confirm-meet">
+                    I confirm this nominee meet
+                </label>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitNomination">Submit</button>
+
+        </div>
+
+    </div>
+
+    <div class="notification-overlay" id="successPopup">
+        <div class="notification">
+            <span class="close-btn" id="closePopup">&times;</span>
+            <div class="popup-icon"></div> 
+            <p class="popup-message">
+                Nomination Successful! <br>Please wait for admin approval.
+            </p>
+            <button class="ok-btn" id="okPopup">OK</button>
+        </div>
+    </div>
+    
+    <nav class="bottom-nav">
+        <a class="nav-btn" href="nominees.html">🗎</a>
+        <a class="nav-btn" href="notification.html">⩍</a>
+        <a class="nav-btn" href="homeplage.html">🏠︎</a>
+        <a class="nav-btn" href="me.html">👤</a>
+        <a class="nav-btn" href="leaderboards.html">📰</a>
+    </nav>
+</div>
+
+<script src="nomination.js"></script>
+</body>
+</html>

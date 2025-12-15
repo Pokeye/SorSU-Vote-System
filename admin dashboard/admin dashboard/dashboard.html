@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Overview</title>
+
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+
+  <div class="phone">
+    <div class="screen">
+
+      <!-- Top Navigation -->
+      <div class="top-nav">
+        <div class="nav-items">
+          <a class="active" href="dashboard.html">Dashboard<br>Overview</a>
+          <a href="login.html">Nomination<br>Management</a>
+          <a href="poll management.html">Poll Management</a>
+          <a href="results&analytics.html">Results &<br>Analytics</a>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="content">
+        <div class="title-row">
+          <h2 class="title">System Notifications</h2>
+          <a class="settings-link" href="settings.html">Settings</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat-card">
+            <div class="icon">👥</div>
+            <div class="number" id="totalVoters">894</div>
+            <p>Total Registered Voter</p>
+          </div>
+
+          <div class="stat-card">
+            <div class="icon active-dot">👤<span></span></div>
+            <div class="number" id="activeNow">136</div>
+            <p>Active Now</p>
+          </div>
+        </div>
+
+        <button class="announce-btn" type="button" onclick="makeAnnouncement()">
+          <span>＋</span>
+          <div>
+            <strong>Make</strong><br>Announcement
+          </div>
+        </button>
+      </div>
+
+      <!-- Announcement Popup -->
+      <div class="pm-modal" id="announcementModal" aria-hidden="true">
+        <div class="pm-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="announcementModalTitle">
+          <div class="pm-modal__header">
+            <div class="pm-modal__title" id="announcementModalTitle">Make Announcement</div>
+            <button class="pm-modal__close" id="closeAnnouncementModal" type="button" aria-label="Close">×</button>
+          </div>
+
+          <div class="stat-card pm-modal__card">
+            <div class="pm-field">
+              <label class="pm-label" for="announcementTitle">Title</label>
+              <input class="pm-input" id="announcementTitle" type="text" placeholder="Type the announcement title" />
+            </div>
+
+            <div class="pm-field">
+              <label class="pm-label" for="announcementDescription">Description</label>
+              <textarea class="pm-input pm-textarea" id="announcementDescription" rows="4" placeholder="Type what you want to announce"></textarea>
+            </div>
+
+            <div class="pm-actions">
+              <button class="pm-save-btn" id="uploadAnnouncement" type="button">Upload</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

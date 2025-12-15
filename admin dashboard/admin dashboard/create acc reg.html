@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account</title>
+  <link rel="stylesheet" href="create acc reg.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="phone">
+  <div class="screen">
+
+    <div class="top-bar">
+      <button class="back-btn" onclick="history.back()">&#8592;</button>
+      <h1>Create Account</h1>
+    </div>
+
+    <form id="registerForm">
+
+      <label>Full Name</label>
+      <div class="input-container">
+        <input type="text" id="fullname" placeholder="Enter Full Name" required>
+      </div>
+
+      <label>Program / Course</label>
+      <div class="input-container">
+        <select id="course" required>
+          <option value="" selected disabled>Select Program / Course</option>
+          <option value="BSCS">BSCS</option>
+          <option value="BSIT">BSIT</option>
+          <option value="BSIS">BSIS</option>
+          <option value="BTVTED">BTVTED</option>
+          <option value="BPA">BPA</option>
+          <option value="BSA">BSA</option>
+          <option value="BSAIS">BSAIS</option>
+          <option value="BSE">BSE</option>
+        </select>
+      </div>
+
+      <label>Department</label>
+      <div class="input-container">
+        <select id="department" required>
+          <option value="" selected disabled>Select Department</option>
+          <option value="CICT">CICT</option>
+          <option value="BME">BME</option>
+        </select>
+      </div>
+
+      <label>Student ID</label>
+      <div class="input-container">
+        <input type="text" id="studentid" placeholder="Enter Student ID" required>
+      </div>
+
+      <label>Email</label>
+      <div class="input-container">
+        <input type="email" id="email" placeholder="Enter Gmail (example@gmail.com)" pattern="^[^\s@]+@gmail\.com$" title="Email must end with @gmail.com" required>
+      </div>
+
+      <label>Password</label>
+      <div class="input-container">
+        <input type="password" id="password" placeholder="Enter Password" required>
+        <button type="button" class="password-toggle" data-target="password" aria-label="Show password">Show</button>
+      </div>
+
+      <label>Expected Graduation Date</label>
+      <div class="input-container">
+        <input type="date" id="gradDate" required>
+      </div>
+
+      <button class="register-btn" type="submit">Register</button>
+
+    </form>
+
+  </div>
+</div>
+
+
+<div id="notification-overlay" class="notification-overlay">
+  <div id="notification" class="notification">
+    <span>Account Registered!</span>
+    <a href="../../loginn.html" class="close-btn">&times;</a>
+  </div>
+</div>
+
+<script src="create acc reg.js"></script>
+</body>
+</html>

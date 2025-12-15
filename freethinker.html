@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freethinker Leaderboards</title>
+    <link rel="stylesheet" href="leaderboards.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div class="phone">
+    <div class="screen">
+        
+        <div class="top-header">
+            <a href="leaderboards.html" class="back-btn">&#x276E;</a>
+            <h1 class="page-title">Freethinker Tally</h1>
+        </div>
+
+        <p class="results-date">Results</p>
+        <p class="results-subdate">As of November 21, 2025</p>
+
+        <div class="org-carousel">
+            <div class="carousel-wrapper">
+                
+                <a href="leaderboards.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="skc.jpg" alt="SKC Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">SKC</p>
+                    </div>
+                </a>
+
+                <a href="tally_jpia.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="jpia.jpg" alt="JPIA Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">JPIA</p>
+                    </div>
+                </a>
+                
+                <a href="tally_rcyc.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="rcyc.jpg" alt="RCYC Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">RCYC</p>
+                    </div>
+                </a>
+                
+                <a href="tally_arts_dance.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="arts nd dance.jpg" alt="Arts and Dance Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">Arts and Dance</p>
+                    </div>
+                </a>
+                
+                <a href="tally_nstp.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="NSTP.jpg" alt="NSTP Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">NSTP</p>
+                    </div>
+                </a>
+                 <a href="ssc.html" class="carousel-link">
+                    <div class="carousel-slide active-org-slide">
+                        <img src="freethinker.jpg" alt="Freethinker Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">SSC</p>
+                    </div>
+                </a>               
+                <a href="tally_freethinker.html" class="carousel-link">
+                    <div class="carousel-slide active-org-slide">
+                        <img src="freethinker.jpg" alt="Freethinker Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">Freethinker</p>
+                    </div>
+                </a>
+                <a href="tally_bookclub.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="lib.jpg" alt="book-club Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">Book Club</p>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+
+        <div id="resultsContainer">
+            
+            <div class="results-card">
+                <h2 class="position-title">President (The Rationalist)</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Aristotle Cruz</p>
+                    </div>
+                    <p class="candidate-party">BAPhilo-4-1</p>
+                    <div class="chart-wrapper"><canvas id="chart-ft-president-aristotle"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Vice President (The Skeptic)</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Socrates Reyes</p>
+                    </div>
+                    <p class="candidate-party">BAPhilo-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-ft-vp-socrates"></canvas></div>
+                </div>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Plato Garcia</p>
+                    </div>
+                    <p class="candidate-party">BSPolSci-3-1</p>
+                    <div class="chart-wrapper"><canvas id="chart-ft-vp-plato"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Secretary (Keeper of Logic)</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Simone De Beauvoir</p>
+                    </div>
+                    <p class="candidate-party">BAComm-2-1</p>
+                    <div class="chart-wrapper"><canvas id="chart-ft-secretary-simone"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Treasurer (The Pragmatist)</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Noam Chomsky</p>
+                    </div>
+                    <p class="candidate-party">BSEd-4-1</p>
+                    <div class="chart-wrapper"><canvas id="chart-ft-treasurer-noam"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Communications Officer</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Bertrand Russell</p>
+                    </div>
+                    <p class="candidate-party">BAPhilo-3-1</p>
+                    <div class="chart-wrapper"><canvas id="chart-ft-comm-bertrand"></canvas></div>
+                </div>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Ayn Rand</p>
+                    </div>
+                    <p class="candidate-party">BSPsych-4-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-ft-comm-ayn"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Auditor (The Fact-Checker)</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Carl Sagan</p>
+                    </div>
+                    <p class="candidate-party">BSSci-3-1</p>
+                    <div class="chart-wrapper"><canvas id="chart-ft-auditor-carl"></canvas></div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <nav class="bottom-nav">
+        <a class="nav-btn" href="nominees.html">🗎</a>
+        <a class="nav-btn" href="notification.html">⩍</a>
+        <a class="nav-btn" href="homeplage.html">🏠︎</a>
+        <a class="nav-btn" href="me.html">👤</a>
+        <a class="nav-btn active" href="leaderboards.html">📰</a>
+    </nav>
+</div>
+
+<script src="tally_freethinker.js"></script>
+</body>
+</html>

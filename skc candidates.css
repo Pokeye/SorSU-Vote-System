@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; background-color: #f5f5f5; height: 100vh; display: flex; justify-content: center; align-items: center; }
+
+.phone {
+  width: 360px; max-width: 95%; height: 720px; background-color: #fff;
+  border-radius: 40px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  position: relative; overflow: hidden; 
+}
+.screen { width: 100%; height: 100%; padding: 0 25px 100px; overflow-y: scroll; }
+
+/* --- Top Header Styles (Standard) --- */
+.top-header { display: flex; align-items: center; padding: 10px 0; margin-bottom: 20px; }
+.back-btn { font-size: 24px; font-weight: 700; color: #333; text-decoration: none; padding: 0 10px 0 0; }
+.page-title { font-size: 24px; font-weight: 600; color: #333; flex-grow: 1; text-align: center; transform: translateX(-15px); }
+
+/* --- Nominees Container --- */
+.nominees-container {
+    padding-bottom: 20px; /* Space above bottom nav */
+}
+
+.position-group {
+    margin-bottom: 30px;
+}
+
+.position-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.nominee-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 15px; /* Space between cards */
+}
+
+.nominee-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically within card */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text */
+    border: 1px solid #eee; /* Subtle border */
+}
+
+.profile-icon {
+    font-size: 40px; /* Larger icon */
+    color: #888;
+    background-color: #f0f0f0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.nominee-details {
+    width: 100%; /* Ensure details take full width */
+}
+
+.nominee-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.nominee-id {
+    font-size: 12px;
+    color: #a90000; /* Red color for ID/Party */
+    margin-bottom: 8px;
+}
+
+.nominee-bio {
+    font-size: 11px;
+    color: #666;
+    line-height: 1.4;
+}
+
+
+/* --- Bottom Navigation (Standard) --- */
+.bottom-nav { 
+    position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); 
+    width: 300px; height: 72px; background: #000; border-radius: 40px; 
+    display: flex; align-items: center; justify-content: space-around; 
+    padding: 0 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.3); z-index: 10;
+}
+.nav-btn { 
+    background: transparent; border: none; color: white; width: 40px; height: 40px; 
+    font-size: 20px; text-decoration: none; display: flex; justify-content: center; align-items: center;
+}
+.nav-btn.active-home { /* Assuming home is still the primary active, adjust as needed */
+    background: #fff; color: #000; width: 48px; height: 48px; border-radius: 50%; 
+    transform: translateY(-16px); box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}

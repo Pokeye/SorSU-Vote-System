@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone {
+  width: 360px;
+  max-width: 95%;
+  height: 720px;
+  background-color: #fff;
+  border-radius: 40px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  position: relative; 
+  overflow: hidden; 
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  padding: 0 25px 100px; 
+  overflow-y: scroll;
+}
+
+/* --- Top Header Styles --- */
+.top-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    background: #fff;
+    position: sticky; 
+    top: 0;
+    z-index: 5;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.back-btn {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+    padding: 0 10px 0 0;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    flex-grow: 1;
+    text-align: center;
+    transform: translateX(-15px); 
+}
+
+/* --- Form General Styles --- */
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  margin-top: 15px;
+  color: #444;
+  display: block; 
+}
+
+.input-select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 22px;
+  border: 1px solid #a90000; /* Red Border */
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+/* --- Form Card (Nominee Details) Styles --- */
+.form-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* FLEXBOX LAYOUT FOR SPLIT ROWS */
+.row-group.split-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.field-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.field-container.wide {
+    flex: 2; /* 66% width */
+}
+
+.field-container.narrow {
+    flex: 1; /* 33% width */
+}
+
+.input-box {
+    padding: 10px;
+    border: 1px solid #a90000; 
+    border-radius: 8px;
+    font-size: 0.9rem;
+    margin-bottom: 0; 
+    width: 100%;
+}
+
+.optional {
+    font-weight: 400;
+    color: #888;
+    font-size: 0.8rem;
+}
+
+/* Picture Upload */
+.picture-box {
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    border: 2px dashed #a90000; 
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    margin-top: 5px; 
+}
+
+.camera-icon {
+    font-size: 2.5rem;
+    color: #aaa;
+}
+
+
+/* --- Reason and Confirmation Styles --- */
+.input-textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #a90000; 
+    border-radius: 8px;
+    font-size: 0.9rem;
+    resize: vertical;
+    margin-bottom: 15px;
+}
+
+.confirm-checkbox {
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    color: #444;
+    cursor: pointer;
+}
+
+.confirm-checkbox input {
+    width: auto;
+    margin-right: 8px;
+}
+
+/* --- Submit Button --- */
+.submit-btn {
+    width: 100%;
+    padding: 15px 0;
+    background-color: #a90000; 
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 15px 0 25px 0;
+    transition: background-color 0.2s;
+}
+
+/* --- Bottom Navigation Styles --- */
+.bottom-nav { 
+    position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); 
+    width: 300px; height: 72px; background: #000; border-radius: 40px; 
+    display: flex; align-items: center; justify-content: space-around; 
+    padding: 0 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.3); z-index: 10;
+}
+.nav-btn { 
+    background: transparent; border: none; color: white; width: 40px; height: 40px; 
+    font-size: 20px; text-decoration: none; display: flex; justify-content: center; align-items: center;
+}
+.nav-btn.active-leaderboards { 
+    background: #fff; color: #000; width: 48px; height: 48px; border-radius: 50%; 
+    transform: translateY(-16px); box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* --- POPUP NOTIFICATION STYLES --- */
+.notification-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 20; 
+}
+
+.notification-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.notification {
+  background-color: #ffffff; 
+  color: #000000; 
+  font-size: 1.0rem;
+  padding: 40px 30px 20px 30px;
+  width: 280px; 
+  min-height: 200px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  position: relative;
+  text-align: center;
+}
+
+.popup-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.popup-message {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+/* --- Bottom Navigation --- */
+.bottom-nav { 
+    position: absolute;
+    bottom: 16px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 300px; 
+    height: 72px; 
+    background: #000; 
+    border-radius: 40px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-around; 
+    padding: 0 16px; 
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3); 
+    z-index: 10;
+}
+.nav-btn { 
+    background: transparent; 
+    border: none; 
+    color: white; 
+    width: 40px; 
+    height: 40px; 
+    font-size: 20px; 
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-btn.center { 
+    background: #fff; 
+    color: #000; 
+    width: 48px; 
+    height: 48px; 
+    border-radius: 50%; 
+    transform: translateY(-16px); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.nav-btn.active { 
+    color: #a90000;
+}

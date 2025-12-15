@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="admin login.css">
+</head>
+<body>
+
+<div class="phone">
+    <div class="screen">
+
+        <div class="top-arch">
+            <img src="logo 1.png" class="logo" alt="Logo">
+        </div>
+
+        <div class="container">
+
+            <h2 class="login-title">Log in</h2>
+
+            <form id="loginForm">
+
+                <label>Email/ID</label>
+                <input type="text" id="identifier" name="identifier" class="input-box" placeholder="Enter Email or ID" required>
+
+                <label>Password</label>
+                <div class="password-field">
+                    <input type="password" id="password" name="password" class="input-box" placeholder="Enter Password" required>
+                    <button type="button" class="password-toggle" data-target="password" aria-label="Show password">Show</button>
+                </div>
+
+                <div class="options">
+                    <label class="remember">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember me</span>
+                    </label>
+
+                    <a href="email.html" class="forgot">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="signin-btn">Sign in</button>
+
+                <div class="divider">
+                    <span class="line"></span>
+                    <span class="or">or</span>
+                    <span class="line"></span>
+                </div>
+
+                <a href="admin sign-in.html" class="admin-btn">
+                    <span class="admin-icon">A</span>
+                    Sign in as Admin
+                </a>
+
+                <p class="signup-text">
+                    Student/Voter registration is on the main site.
+                    <a href="../../create acc reg.html" class="signup-link">Go to Student Sign Up</a>
+                </p>
+
+            </form>
+        </div>
+
+    </div>
+<script src="admin login.js"></script>
+</div>
+
+</body>
+ </html>

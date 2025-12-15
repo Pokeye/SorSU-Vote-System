@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboards</title>
+    <link rel="stylesheet" href="leaderboards.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div class="phone">
+    <div class="screen">
+        
+        <div class="top-header">
+            <a href="#" class="back-btn">&#x276E;</a>
+            <h1 class="page-title">Leaderboards</h1>
+        </div>
+
+        <p class="results-date">Results</p>
+        <p class="results-subdate">As of November 21, 2025</p>
+
+        <div class="org-carousel">
+            <div class="carousel-wrapper">
+                
+                <a href="#" class="carousel-link">
+                    <div class="carousel-slide active-org-slide">
+                        <img src="skc.jpg" alt="SKC Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">SKC</p>
+                    </div>
+                </a>
+
+                <a href="tally_jpia.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="jpia.jpg" alt="JPIA Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">JPIA</p>
+                    </div>
+                </a>
+                
+                <a href="tally_rcyc.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="rcyc.jpg" alt="RCYC Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">RCYC</p>
+                    </div>
+                </a>
+                
+                <a href="tally_bookclub.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="lib.jpg" alt="Book Club Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">Book Club</p>
+                    </div>
+                </a>
+                <a href="arts and dance.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="arts nd dance.jpg" alt="Sports Club Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">Sports Club</p>
+                    </div>
+                </a>
+                <a href="nstp.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="NSTP.jpg" alt="NSTP Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">NSTP</p>
+                    </div>
+                </a>
+
+                <a href="ssc.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="ssc.jpg" alt="SSC Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">SSC</p>
+                    </div>
+                </a>
+                <a href="freethinker.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="freet.jpg" alt="SSC Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">Freethinker</p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+        <div id="resultsContainer">
+            
+            <div class="results-card">
+                <h2 class="position-title">President</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Maria Labo</p>
+                        </div>
+                    <p class="candidate-party">BSIT-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-president-maria"></canvas></div>
+                </div>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Juan Linaw</p>
+                        </div>
+                    <p class="candidate-party">BSIT-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-president-juan"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Vice President</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Luxe Organix</p>
+                    </div>
+                    <p class="candidate-party">BSIT-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-vp-luxe"></canvas></div>
+                </div>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Unilab Celeteque</p>
+                    </div>
+                    <p class="candidate-party">BSIT-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-vp-unilab"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Secretary</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Sam Mangubat</p>
+                    </div>
+                    <p class="candidate-party">BSIT-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-secretary-sam"></canvas></div>
+                </div>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Morisette Amon</p>
+                    </div>
+                    <p class="candidate-party">BSIT-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-secretary-morisette"></canvas></div>
+                </div>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Regine Velasquez</p>
+                    </div>
+                    <p class="candidate-party">BSIT-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-secretary-regine"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Treasurer</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Sabrina Carpenter</p>
+                    </div>
+                    <p class="candidate-party">BSIT-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-treasurer-sabrina"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Auditor</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Luxe Organix</p>
+                    </div>
+                    <p class="candidate-party">BSIT-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-auditor-luxe"></canvas></div>
+                </div>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Unilab Celeteque</p>
+                    </div>
+                    <p class="candidate-party">BSIT-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-auditor-unilab"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">PIO</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Sam Mangubat</p>
+                    </div>
+                    <p class="candidate-party">BSIT-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-pio-sam"></canvas></div>
+                </div>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Morisette Amon</p>
+                    </div>
+                    <p class="candidate-party">BSIT-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-pio-morisette"></canvas></div>
+                </div>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Regine Velasquez</p>
+                    </div>
+                    <p class="candidate-party">BSIT-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-pio-regine"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Business Manager</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Luxe Organix</p>
+                    </div>
+                    <p class="candidate-party">BSIT-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-bm-luxe"></canvas></div>
+                </div>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Unilab Celeteque</p>
+                    </div>
+                    <p class="candidate-party">BSIT-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-bm-unilab"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Escort</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Harry Styles</p>
+                    </div>
+                    <p class="candidate-party">BSIT-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-escort-harry"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Muse</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Lea Salonga</p>
+                    </div>
+                    <p class="candidate-party">BSIT-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-muse-lea"></canvas></div>
+                </div>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Morisette Amon</p>
+                    </div>
+                    <p class="candidate-party">BSIT-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-muse-morisette"></canvas></div>
+                </div>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Regine Velasquez</p>
+                    </div>
+                    <p class="candidate-party">BSIT-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-muse-regine"></canvas></div>
+                </div>
+            </div>
+            </div>
+        
+    </div>
+
+    <nav class="bottom-nav">
+        <a class="nav-btn" href="nominees.html">🗎</a>
+        <a class="nav-btn" href="notification.html">⩍</a>
+        <a class="nav-btn" href="homeplage.html">🏠︎</a>
+        <a class="nav-btn" href="me.html">👤</a>
+        <a class="nav-btn" href="leaderboards.html">📰</a>
+    </nav>
+</div>
+
+<script src="leaderboards.js"></script>
+</body>
+</html>

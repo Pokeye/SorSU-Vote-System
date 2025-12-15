@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* PHONE FRAME */
+.phone {
+  width: 360px;
+  max-width: 95%;
+  height: 720px;
+  background-color: #fff;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* SCREEN LAYOUT */
+.screen {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* TOP ARCH */
+.top-arch {
+  width: 100%;
+  height: 230px;
+  background-color: #8B0000;        /* dark red */
+  position: relative;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-arch img.logo {
+  width: 150px;
+  height: auto;
+}
+
+/* CONTAINER */
+.container {
+  padding: 25px 30px;
+  text-align: left;
+}
+
+/* TITLE */
+.login-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 35px;
+}
+
+/* LABELS */
+label {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-left: 5px;
+}
+
+/* INPUT BOXES */
+.input-box {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  margin: 10px 0 25px 0;
+  border-radius: 30px;
+  border: 1px solid #999;
+  outline: none;
+}
+
+.password-container {
+  position: relative;
+}
+
+.password-container .input-box {
+  padding-right: 80px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #007bff;
+}
+
+/* OPTIONS LINE: REMEMBER + FORGOT */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.options .remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.forgot {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+/* SIGN IN BUTTON */
+.signin-btn {
+  width: 100%;
+  padding: 15px 0;
+  background-color: #b20000; /* red */
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+.signin-btn:hover {
+  background-color: #8b0000;
+}
+
+/* DIVIDER */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 20px;
+}
+
+.line {
+  height: 1px;
+  width: 40%;
+  background-color: #666;
+}
+
+.or {
+  margin: 0 10px;
+  font-size: 1rem;
+}
+
+/* ADMIN BUTTON */
+.admin-btn {
+  width: 100%;
+  padding: 14px 0;
+  border-radius: 35px;
+  border: none;
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+.admin-icon {
+  font-size: 1.5rem;
+  color: #b20000;
+  font-weight: 700;
+}
+
+/* SIGN UP TEXT */
+.signup-text {
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.signup-link {
+  color: #007bff;
+  text-decoration: none;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Untitled-1.css">
+</head>
+<body>
+
+<div class="phone">
+    <div class="screen">
+
+        <div class="top-arch">
+            <img src="logo.png" class="logo" alt="Logo">
+        </div>
+
+        <div class="container">
+
+            <h2 class="login-title">Log in</h2>
+
+            <form id="loginForm">
+
+                <label>Email/ID</label>
+                <input type="text" id="identifier" class="input-box" placeholder="Enter Email or ID">
+
+                <label>Password</label>
+                <div class="password-container">
+                    <input type="password" id="password" class="input-box" placeholder="Enter Password">
+                    <button type="button" class="password-toggle" data-target="password" aria-label="Show password">Show</button>
+                </div>
+
+                <div class="options">
+                    <label class="remember">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember me</span>
+                    </label>
+
+                    <a href="email.html" class="forgot">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="signin-btn">Sign in</button>
+
+                <div class="divider">
+                    <span class="line"></span>
+                    <span class="or">or</span>
+                    <span class="line"></span>
+                </div>
+
+                <button type="button" class="admin-btn">
+                    <span class="admin-icon">A</span>
+                    Sign in as Admin
+                </button>
+
+                <p class="signup-text">
+                    Don't have an Account?
+                    <a href="create acc reg.html" class="signup-link">Sign Up</a>
+                </p>
+
+            </form>
+        </div>
+
+    </div>
+<script src="login.js"></script>
+</div>
+
+</body>

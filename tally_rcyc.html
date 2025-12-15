@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCYC Leaderboards</title>
+    <link rel="stylesheet" href="leaderboards.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div class="phone">
+    <div class="screen">
+        
+        <div class="top-header">
+            <a href="leaderboards.html" class="back-btn">&#x276E;</a>
+            <h1 class="page-title">Leaderboards</h1>
+        </div>
+
+        <p class="results-date">Results</p>
+        <p class="results-subdate">As of November 21, 2026</p>
+
+        <div class="org-carousel">
+            <div class="carousel-wrapper">
+                
+                <a href="leaderboards.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="skc.jpg" alt="SKC Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">SKC</p>
+                    </div>
+                </a>
+
+                <a href="tally_jpia.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="jpia.jpg" alt="JPIA Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">JPIA</p>
+                    </div>
+                </a>
+                
+                <a href="tally_rcyc.html" class="carousel-link">
+                    <div class="carousel-slide active-org-slide">
+                        <img src="rcyc.jpg" alt="RCYC Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">RCYC</p>
+                    </div>
+                </a>
+                
+                <a href="arts and dance.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="arts nd dance.jpg" alt="SporT Club Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">Sport Club</p>
+                    </div>
+                </a>
+                
+                <a href="nstp.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="NSTP.jpg" alt="NSTP Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">NSTP</p>
+                    </div>
+                </a>
+                
+                <a href="ssc.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="ssc.jpg" alt="SSC Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">SSC</p>
+                    </div>
+                </a>
+ 
+                <a href="tally_bookclub.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="lib.jpg" alt="SSC Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">Book Club</p>
+                    </div>
+                </a>                
+                <a href="freethinker.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="freet.jpg" alt="SSC Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">Freethinker</p>
+                    </div>
+                </a>                
+            </div>
+        </div>
+
+        <div id="resultsContainer">
+            
+            <div class="results-card">
+                <h2 class="position-title">Vice President</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Placeholder Name 1</p> 
+                    </div>
+                    <p class="candidate-party">BSSA-4-1</p>
+                    <div class="chart-wrapper"><canvas id="chart-rcyc-vp-ganuman"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Secretary</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Placeholder Name 2</p>
+                    </div>
+                    <p class="candidate-party">Sswarwhorpl Gshwswp</p>
+                    <div class="chart-wrapper"><canvas id="chart-rcyc-secretary-lipowshc"></canvas></div>
+                </div>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Placeholder Name 3</p>
+                    </div>
+                    <p class="candidate-party">BSIT-3-2</p>
+                    <div class="chart-wrapper"><canvas id="chart-rcyc-secretary-sswarwhorpl"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Vice President</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Placeholder Name 4</p>
+                    </div>
+                    <p class="candidate-party">BSSA-4-1</p>
+                    <div class="chart-wrapper"><canvas id="chart-rcyc-vp2-argom"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">PIO</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Placeholder Name 5</p>
+                    </div>
+                    <p class="candidate-party">yshsk</p>
+                    <div class="chart-wrapper"><canvas id="chart-rcyc-pio-moqn"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Treasurer</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Placeholder Name 6</p>
+                    </div>
+                    <p class="candidate-party">BSSA-4-1</p>
+                    <div class="chart-wrapper"><canvas id="chart-rcyc-treasurer-bilbo"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Business Manager</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Placeholder Name 7</p>
+                    </div>
+                    <p class="candidate-party">BSSA-4-1</p>
+                    <div class="chart-wrapper"><canvas id="chart-rcyc-bm-elodmel"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Auditor</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Placeholder Name 8</p>
+                    </div>
+                    <p class="candidate-party">BSSA-4-1</p>
+                    <div class="chart-wrapper"><canvas id="chart-rcyc-auditor-galadriel"></canvas></div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <nav class="bottom-nav">
+        <a class="nav-btn" href="nominees.html">🗎</a>
+        <a class="nav-btn" href="notification.html">⩍</a>
+        <a class="nav-btn" href="homeplage.html">🏠︎</a>
+        <a class="nav-btn" href="me.html">👤</a>
+        <a class="nav-btn" href="leaderboards.html">📰</a>
+    </nav>
+</div>
+
+<script src="tally_rcyc.js"></script>
+</body>
+</html>

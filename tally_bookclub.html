@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Club Leaderboards</title>
+    <link rel="stylesheet" href="leaderboards.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div class="phone">
+    <div class="screen">
+        
+        <div class="top-header">
+            <a href="leaderboards.html" class="back-btn">&#x276E;</a>
+            <h1 class="page-title">Book Club Tally</h1>
+        </div>
+
+        <p class="results-date">Results</p>
+        <p class="results-subdate">As of November 21, 2025</p>
+
+        <div class="org-carousel">
+            <div class="carousel-wrapper">
+                
+                <a href="leaderboards.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="skc.jpg" alt="SKC Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">SKC</p>
+                    </div>
+                </a>
+
+                <a href="tally_jpia.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="jpia.jpg" alt="JPIA Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">JPIA</p>
+                    </div>
+                </a>
+                
+                <a href="tally_rcyc.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="rcyc.jpg" alt="RCYC Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">RCYC</p>
+                    </div>
+                </a>
+                
+                <a href="tally_arts_dance.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="arts nd dance.jpg" alt="Arts and Dance Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">Arts and Dance</p>
+                    </div>
+                </a>
+                
+                <a href="tally_nstp.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="NSTP.jpg" alt="NSTP Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">NSTP</p>
+                    </div>
+                </a>
+                
+                <a href="tally_freethinker.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="freet.jpg" alt="Freethinker Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">Freethinker</p>
+                    </div>
+                </a>
+                
+                <a href="tally_ssc.html" class="carousel-link">
+                    <div class="carousel-slide">
+                        <img src="ssc.jpg" alt="SSC Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">SSC</p>
+                    </div>
+                </a>
+                
+                <a href="tally_bookclub.html" class="carousel-link">
+                    <div class="carousel-slide active-org-slide">
+                        <img src="lib.jpg" alt="Book Club Icon" class="carousel-org-icon">
+                        <p class="carousel-org-name">Book Club</p>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+
+        <div id="resultsContainer">
+            
+            <div class="results-card">
+                <h2 class="position-title">President (The Literary Critic)</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Jane Austen</p>
+                    </div>
+                    <p class="candidate-party">BAPhilo-4-A</p>
+                    <div class="chart-wrapper"><canvas id="chart-bc-president-jane"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Vice President (The Storyteller)</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Gabriel Garcia Marquez</p>
+                    </div>
+                    <p class="candidate-party">BAComm-3-B</p>
+                    <div class="chart-wrapper"><canvas id="chart-bc-vp-gabriel"></canvas></div>
+                </div>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Virginia Woolf</p>
+                    </div>
+                    <p class="candidate-party">BAPhilo-3-A</p>
+                    <div class="chart-wrapper"><canvas id="chart-bc-vp-virginia"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Secretary (The Note-Taker)</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">J.R.R. Tolkien</p>
+                    </div>
+                    <p class="candidate-party">BSEd-2-A</p>
+                    <div class="chart-wrapper"><canvas id="chart-bc-secretary-tolkien"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Treasurer (The Fund Raiser)</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">F. Scott Fitzgerald</p>
+                    </div>
+                    <p class="candidate-party">BSBA-4-B</p>
+                    <div class="chart-wrapper"><canvas id="chart-bc-treasurer-fitzgerald"></canvas></div>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <h2 class="position-title">Events Coordinator</h2>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Ernest Hemingway</p>
+                    </div>
+                    <p class="candidate-party">BAPhilo-3-C</p>
+                    <div class="chart-wrapper"><canvas id="chart-bc-events-hemingway"></canvas></div>
+                </div>
+                <div class="candidate-result-item">
+                    <div class="candidate-header-row">
+                        <p class="candidate-name">Harper Lee</p>
+                    </div>
+                    <p class="candidate-party">BSEd-3-D</p>
+                    <div class="chart-wrapper"><canvas id="chart-bc-events-harper"></canvas></div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <nav class="bottom-nav">
+        <a class="nav-btn" href="nominees.html">🗎</a>
+        <a class="nav-btn" href="notification.html">⩍</a>
+        <a class="nav-btn" href="homeplage.html">🏠︎</a>
+        <a class="nav-btn" href="me.html">👤</a>
+        <a class="nav-btn active" href="leaderboards.html">📰</a>
+    </nav>
+</div>
+
+<script src="tally_bookclub.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+{
+  "users": [
+    {
+      "id": "demo-user-1",
+      "fullname": "Demo User",
+      "course": "BSCS",
+      "department": "CICT",
+      "studentid": "2025-0001",
+      "email": "demo.user@gmail.com",
+      "password": {
+        "salt": "2216289058438fbff8a222d8a2098e61",
+        "hash": "fde479346b49d8767b9eaea560bb3ddcbb5e71e3f0ef7aa0d9950514e91b256d"
+      },
+      "gradDate": "2026-03-31"
+    },
+    {
+      "id": "showcase-user-1",
+      "fullname": "Showcase User",
+      "course": "BSIT",
+      "department": "BME",
+      "studentid": "2025-0002",
+      "email": "showcase.user@gmail.com",
+      "password": {
+        "salt": "df03eab2e4156ff04f84467d42615b35",
+        "hash": "cd8641c7d2ed3d1408877d25fa46fd846d4a586fa2469829bee64d9ec4eeeed8"
+      },
+      "gradDate": "2026-03-31"
+    }
+  ],
+  "passwordResets": [],
+  "nominations": [
+    {
+      "id": "n1",
+      "name": "Ariana Grande",
+      "section": "BSCS 3 - 1",
+      "status": "pending"
+    },
+    {
+      "id": "n2",
+      "name": "Sabrina Carpenter",
+      "section": "BSIT 3 - 1",
+      "status": "pending"
+    },
+    {
+      "id": "n3",
+      "name": "Harry Styles",
+      "section": "BSIS 3 - 1",
+      "status": "pending"
+    },
+    {
+      "id": "n4",
+      "name": "Justin Bieber",
+      "section": "BSCS 3 - 1",
+      "status": "pending"
+    },
+    {
+      "id": "n5",
+      "name": "Taylor Swift",
+      "section": "BSIT 3 - 1",
+      "status": "pending"
+    }
+  ],
+  "stats": {
+    "totalVoters": 894,
+    "activeNow": 136
+  },
+  "admin": {
+    "accessCodeHash": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+    "adminKeyHash": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forgot Password</title>
+  <link rel="stylesheet" href="emaill.css" />
+</head>
+<body>
+  <div class="phone">
+    <div class="screen">
+      <div class="top-bar">
+        <button class="back-btn" onclick="goBack()">&#8592;</button>
+        <h1>Forgot Password?</h1>
+      </div>
+
+      <form id="resetForm">
+        <label for="email">Email</label>
+        <div class="input-container">
+          <span class="mail-icon">&#9993;</span>
+          <input type="email" id="email" placeholder="Enter your Gmail (example@gmail.com)" pattern="^[^\s@]+@gmail\.com$" title="Email must end with @gmail.com" required />
+        </div>
+        <button type="submit" class="reset-btn">Submit</button>
+        
+
+      </form>
+    </div>
+  </div>
+
+  <script src="emailll.js"></script>
+</body>
+</html>
+
