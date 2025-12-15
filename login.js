@@ -61,7 +61,7 @@ function ensureSeedMockUser() {
 
 ensureSeedMockUser();
 
-document.getElementById("loginForm").addEventListener("submit", function (e) {
+document.getElementById("loginForm").addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const identifierEl = document.getElementById("identifier");
