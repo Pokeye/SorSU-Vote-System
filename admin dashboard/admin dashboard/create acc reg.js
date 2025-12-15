@@ -59,6 +59,41 @@ form.addEventListener("submit", async function(e) {
       return;
     }
 
+    // Also store the created account in the student-side mock storage.
+    // This makes Student login reliable on Vercel even if the serverless backend
+    // is running without persistent storage (KV).
+    try {
+      const raw = localStorage.getItem("mockUsers");
+      const parsed = raw ? JSON.parse(raw) : [];
+      const users = Array.isArray(parsed) ? parsed : [];
+
+      const emailLower = String(payload.email || "").trim().toLowerCase();
+      const studentId = String(payload.studentid || "").trim();
+
+      const exists = users.some((u) => {
+        if (!u) return false;
+        const e = String(u.email || "").trim().toLowerCase();
+        const s = String(u.studentId || "").trim();
+        return e === emailLower || s === studentId;
+      });
+
+      if (!exists) {
+        users.push({
+          fullName: String(payload.fullname || "").trim(),
+          course: String(payload.course || "").trim(),
+          department: String(payload.department || "").trim(),
+          studentId,
+          email: String(payload.email || "").trim(),
+          password: String(payload.password || ""),
+          gradDate: String(payload.gradDate || ""),
+          createdAt: new Date().toISOString(),
+        });
+        localStorage.setItem("mockUsers", JSON.stringify(users));
+      }
+    } catch {
+      // ignore localStorage errors
+    }
+
     overlay.classList.add("show");
     form.reset();
 
