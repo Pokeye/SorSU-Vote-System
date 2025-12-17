@@ -4,6 +4,25 @@ const BACKEND_HOST = location.hostname === "127.0.0.1" ? "127.0.0.1" : "localhos
 const API_BASE = location.protocol === "file:" || location.port === "5500" ? `http://${BACKEND_HOST}:3000` : "";
 const apiUrl = (p) => `${API_BASE}${p}`;
 
+async function requireAdminOrRedirect() {
+  try {
+    const res = await fetch(apiUrl('/api/auth/me'), { credentials: 'include' });
+    if (!res.ok) {
+      window.location.href = 'admin sign-in.html';
+      return false;
+    }
+    const data = await res.json();
+    if (!data || data.admin !== true) {
+      window.location.href = 'admin sign-in.html';
+      return false;
+    }
+    return true;
+  } catch {
+    window.location.href = 'admin sign-in.html';
+    return false;
+  }
+}
+
 function safeText(text) {
   return String(text ?? "");
 }
@@ -43,6 +62,10 @@ async function handleAction(action, nominee, cardEl) {
     });
 
     if (!res.ok) {
+      if (res.status === 401) {
+        window.location.href = 'admin sign-in.html';
+        return;
+      }
       alert("Not authorized. Sign in as Admin first.");
       return;
     }
@@ -58,10 +81,17 @@ async function loadNominations() {
   if (!container) return;
   container.innerHTML = "";
 
+  const ok = await requireAdminOrRedirect();
+  if (!ok) return;
+
   try {
     const res = await fetch(apiUrl("/api/nominations"), { credentials: "include" });
     if (!res.ok) {
-      container.innerHTML = "<p style=\"padding:16px\">Sign in as Admin to view nominations.</p>";
+      if (res.status === 401) {
+        window.location.href = 'admin sign-in.html';
+        return;
+      }
+      container.innerHTML = "<p style=\"padding:16px\">Unable to load nominations.</p>";
       return;
     }
 

@@ -16,3 +16,9 @@ yarn-error.log*
 # Local env (if you add one later)
 .env
 .env.*
+
+# Local smoke tests / temp artifacts
+_smoke_cookie.txt
+admin dashboard/server/_*.json
+admin dashboard/server/_server_*.log
+admin dashboard/server/logs/

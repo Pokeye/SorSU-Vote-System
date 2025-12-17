@@ -44,5 +44,18 @@ module.exports = async function handler(req, res) {
 
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify({ ok: true }));
+  res.end(
+    JSON.stringify({
+      ok: true,
+      user: {
+        id: user.id,
+        fullname: user.fullname || '',
+        course: user.course || '',
+        department: user.department || '',
+        studentid: user.studentid || '',
+        email: user.email || '',
+        gradDate: user.gradDate || ''
+      }
+    })
+  );
 };

@@ -1,3 +1,7 @@
+const BACKEND_HOST = location.hostname === "127.0.0.1" ? "127.0.0.1" : "localhost";
+const API_BASE = location.protocol === "file:" || location.port === "5500" ? `http://${BACKEND_HOST}:3000` : "";
+const apiUrl = (p) => `${API_BASE}${p}`;
+
 const form = document.getElementById("registerForm");
 const overlay = document.getElementById("notification-overlay");
 
@@ -25,52 +29,7 @@ document.querySelectorAll(".password-toggle").forEach((btn) => {
   });
 });
 
-function safeJsonParse(value, fallback) {
-  try {
-    return JSON.parse(value);
-  } catch {
-    return fallback;
-  }
-}
-
-function getMockUsers() {
-  const raw = localStorage.getItem("mockUsers");
-  const users = safeJsonParse(raw, []);
-  return Array.isArray(users) ? users : [];
-}
-
-function ensureSeedMockUser() {
-  const users = getMockUsers();
-  const seed = {
-    fullName: "Demo Student",
-    course: "BSIT",
-    department: "CCS",
-    studentId: "2025-0001",
-    email: "student@sorsu.edu.ph",
-    password: "student123",
-    gradDate: "2028-06-30",
-    createdAt: new Date().toISOString(),
-  };
-
-  const exists = users.some((u) => {
-    if (!u) return false;
-    const email = String(u.email || "").trim().toLowerCase();
-    const studentId = String(u.studentId || "").trim();
-    return email === seed.email.toLowerCase() || studentId === seed.studentId;
-  });
-
-  if (exists) return;
-  users.push(seed);
-  saveMockUsers(users);
-}
-
-function saveMockUsers(users) {
-  localStorage.setItem("mockUsers", JSON.stringify(users));
-}
-
-ensureSeedMockUser();
-
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", async function (e) {
   e.preventDefault();
 
   const fullName = (document.getElementById("fullname")?.value || "").trim();
@@ -86,38 +45,42 @@ form.addEventListener("submit", function (e) {
     return;
   }
 
-  const users = getMockUsers();
-  const alreadyExists = users.some((u) => {
-    if (!u) return false;
-    return (
-      String(u.email || "").trim().toLowerCase() === email.toLowerCase() ||
-      String(u.studentId || "").trim() === studentId
-    );
-  });
+  try {
+    const res = await fetch(apiUrl('/api/auth/register'), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({
+        fullname: fullName,
+        course,
+        department,
+        studentid: studentId,
+        email,
+        password,
+        gradDate
+      })
+    });
 
-  if (alreadyExists) {
-    alert("Account already exists for this Email or Student ID.");
-    return;
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      const msg = data && data.error ? `Registration failed: ${data.error}` : 'Registration failed.';
+      alert(msg);
+      return;
+    }
+
+    const data = await res.json().catch(() => ({}));
+    if (data && data.user) {
+      localStorage.setItem('currentUser', JSON.stringify(data.user));
+    }
+
+    if (overlay) overlay.classList.add('show');
+    form.reset();
+
+    // Keep existing UX: go to login page after register
+    setTimeout(() => {
+      window.location.href = 'loginn.html';
+    }, 700);
+  } catch {
+    alert('Server is not running. Start the backend and try again.');
   }
-
-  users.push({
-    fullName,
-    course,
-    department,
-    studentId,
-    email,
-    password,
-    gradDate,
-    createdAt: new Date().toISOString(),
-  });
-
-  saveMockUsers(users);
-
-  if (overlay) overlay.classList.add("show");
-  form.reset();
-
-  // After creating an account, go to Login page
-  setTimeout(() => {
-    window.location.href = "loginn.html";
-  }, 700);
 });

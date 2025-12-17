@@ -24,10 +24,32 @@ const BACKEND_HOST = location.hostname === "127.0.0.1" ? "127.0.0.1" : "localhos
 const API_BASE = location.protocol === "file:" || location.port === "5500" ? `http://${BACKEND_HOST}:3000` : "";
 const apiUrl = (p) => `${API_BASE}${p}`;
 
+async function requireAdminOrRedirect() {
+  try {
+    const res = await fetch(apiUrl('/api/auth/me'), { credentials: 'include' });
+    if (!res.ok) {
+      window.location.href = 'admin sign-in.html';
+      return false;
+    }
+    const data = await res.json();
+    if (!data || data.admin !== true) {
+      window.location.href = 'admin sign-in.html';
+      return false;
+    }
+    return true;
+  } catch {
+    window.location.href = 'admin sign-in.html';
+    return false;
+  }
+}
+
 async function loadStats() {
   try {
     const res = await fetch(apiUrl("/api/stats"), { credentials: "include" });
-    if (!res.ok) return;
+    if (!res.ok) {
+      if (res.status === 401) window.location.href = 'admin sign-in.html';
+      return;
+    }
     const data = await res.json();
 
     if (typeof data.totalVoters !== "undefined") {
@@ -41,4 +63,8 @@ async function loadStats() {
   }
 }
 
-loadStats();
+(async () => {
+  const ok = await requireAdminOrRedirect();
+  if (!ok) return;
+  loadStats();
+})();

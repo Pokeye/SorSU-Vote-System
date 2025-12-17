@@ -25,10 +25,21 @@ function verifyCode() {
   if (enteredCode.length < 4) {
     alert('Please enter the complete code.');
     return false;
-  } else {
-    alert(`Code entered: ${enteredCode}`);
-    return true;
   }
+
+  const expected = sessionStorage.getItem('resetCodeSuffix');
+  const token = sessionStorage.getItem('resetToken');
+  if (!expected || !token) {
+    alert('No reset request found. Please request a new code.');
+    return false;
+  }
+
+  if (String(enteredCode).toLowerCase() !== String(expected).toLowerCase()) {
+    alert('Invalid verification code.');
+    return false;
+  }
+
+  return true;
 }
 
 const verifyForm = document.getElementById('verifyForm');

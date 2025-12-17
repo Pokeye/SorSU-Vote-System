@@ -20,21 +20,8 @@ module.exports = async function handler(req, res) {
     return res.end(JSON.stringify({ error: 'missing_fields' }));
   }
 
-  const allowedCourses = new Set(['BSCS', 'BSIT', 'BSIS', 'BTVTED', 'BPA', 'BSA', 'BSAIS', 'BSE']);
-  const normalizedCourse = String(course).trim().toUpperCase();
-  if (!allowedCourses.has(normalizedCourse)) {
-    res.statusCode = 400;
-    res.setHeader('Content-Type', 'application/json');
-    return res.end(JSON.stringify({ error: 'invalid_course' }));
-  }
-
-  const allowedDepartments = new Set(['CICT', 'BME']);
-  const normalizedDepartment = String(department).trim().toUpperCase();
-  if (!allowedDepartments.has(normalizedDepartment)) {
-    res.statusCode = 400;
-    res.setHeader('Content-Type', 'application/json');
-    return res.end(JSON.stringify({ error: 'invalid_department' }));
-  }
+  const normalizedCourse = String(course).trim();
+  const normalizedDepartment = String(department).trim();
 
   const normalizedEmail = String(email).trim().toLowerCase();
   const normalizedStudentId = String(studentid).trim();
@@ -45,7 +32,10 @@ module.exports = async function handler(req, res) {
     return res.end(JSON.stringify({ error: 'invalid_email' }));
   }
 
-  if (!normalizedEmail.endsWith('@gmail.com')) {
+  // Allow common demo domains (your demo seed uses @sorsu.edu.ph)
+  const allowedDomains = new Set(['@gmail.com', '@sorsu.edu.ph']);
+  const domainOk = Array.from(allowedDomains).some((d) => normalizedEmail.endsWith(d));
+  if (!domainOk) {
     res.statusCode = 400;
     res.setHeader('Content-Type', 'application/json');
     return res.end(JSON.stringify({ error: 'invalid_email_domain' }));
@@ -77,5 +67,18 @@ module.exports = async function handler(req, res) {
 
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify({ ok: true }));
+  res.end(
+    JSON.stringify({
+      ok: true,
+      user: {
+        id: user.id,
+        fullname: user.fullname,
+        course: user.course,
+        department: user.department,
+        studentid: user.studentid,
+        email: user.email,
+        gradDate: user.gradDate
+      }
+    })
+  );
 };

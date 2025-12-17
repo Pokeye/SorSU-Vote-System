@@ -39,3 +39,6 @@ You can override these with env vars:
 - `ADMIN_KEY`
 - `SESSION_SECRET`
 - `PORT`
+
+Election timing (dev/demo):
+- `ELECTION_END_AT` (ISO datetime, e.g. `2025-12-16T12:00:00.000Z`)

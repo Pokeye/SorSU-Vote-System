@@ -47,4 +47,20 @@ Verify:
 ### Notes
 
 - Pages/folders with spaces in their names work, but the URL will include `%20`.
-- The old Express server (`admin dashboard/server/server.js`) is not used by Vercel; the deployed API is in `/api/*`.
+
+### Local Development (Optional)
+
+If you want the HTML pages to work locally (register/login, nominations, voting), run the local Express backend and open the site via Live Server.
+
+1. Start the backend:
+	- `cd "admin dashboard/server"`
+	- `npm install`
+	- `npm run dev` (defaults to `http://localhost:3000`)
+2. Open the project with VS Code Live Server (usually `http://127.0.0.1:5500`).
+
+The frontend JS uses `http://localhost:3000` as an API base when opened from Live Server.
+
+### Deployment
+
+- The Express server (`admin dashboard/server/server.js`) is for local development only.
+- On Vercel, the deployed API is in `/api/*`.

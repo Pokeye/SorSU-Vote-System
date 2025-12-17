@@ -20,6 +20,65 @@ const swiper = new Swiper('.swiper-container.one', {
 
 const orgNameDisplays = document.querySelectorAll('#org-name-display, #org-name-display-secondary');
 
+const ELECTION_ID_BY_ORG_NAME = {
+  'SKC': 'skc',
+  'JPIA': 'jpia',
+  'RCYC': 'rcyc',
+  'Book Club': 'bookclub',
+  'Sports Club': 'arts_dance',
+  'STAND': 'arts_dance',
+  'NSTP': 'nstp',
+  'Freethinker': 'freethinker',
+  'SSC': 'ssc'
+};
+
+function getActiveElectionId() {
+  const activeSlide = document.querySelector('.swiper-slide-active');
+  const name = activeSlide ? (activeSlide.dataset.name || '') : '';
+  return ELECTION_ID_BY_ORG_NAME[name] || 'skc';
+}
+
+function updateVoteLink() {
+  const voteLink = document.querySelector('.vote-link');
+  if (!voteLink) return;
+  const electionId = getActiveElectionId();
+  voteLink.setAttribute('href', `votingpage.html?electionId=${encodeURIComponent(electionId)}`);
+}
+
+function updateVoteButtonState() {
+  const electionId = getActiveElectionId();
+  const key = `hasVoted:${electionId}`;
+
+  let hasVoted = false;
+  try {
+    hasVoted = localStorage.getItem(key) === 'true';
+  } catch (e) {
+    hasVoted = false;
+  }
+
+  const statusEl = document.querySelector('.status');
+  const voteBtn = document.querySelector('.vote-btn');
+  const voteLink = document.querySelector('.vote-link');
+
+  if (!voteBtn || !voteLink) return;
+
+  if (hasVoted) {
+    if (statusEl) statusEl.textContent = 'Voting Closed';
+    voteBtn.textContent = 'Voting Closed';
+    voteBtn.disabled = true;
+    voteBtn.style.opacity = '0.7';
+    voteBtn.style.cursor = 'not-allowed';
+    voteLink.style.pointerEvents = 'none';
+  } else {
+    if (statusEl) statusEl.textContent = 'Ongoing';
+    voteBtn.textContent = 'Vote Now';
+    voteBtn.disabled = false;
+    voteBtn.style.opacity = '';
+    voteBtn.style.cursor = '';
+    voteLink.style.pointerEvents = '';
+  }
+}
+
 function updateOrgName() {
     // Get the data-name from the currently active slide
     // Swiper uses .swiper-slide-active for the main slide
@@ -32,6 +91,9 @@ function updateOrgName() {
     orgNameDisplays.forEach((el) => {
       el.textContent = name;
     });
+
+    updateVoteLink();
+    updateVoteButtonState();
 }
 
 // Initial update
@@ -64,34 +126,6 @@ function startCountdown() {
 }
 startCountdown();
 
-// ----------------------
-// Voting Closed (Already Voted)
-// ----------------------
-(() => {
-  let hasVoted = false;
-  try {
-    hasVoted = localStorage.getItem('hasVoted') === 'true';
-  } catch (e) {
-    hasVoted = false;
-  }
-
-  if (!hasVoted) return;
-
-  const statusEl = document.querySelector('.status');
-  if (statusEl) statusEl.textContent = 'Voting Closed';
-
-  const voteBtn = document.querySelector('.vote-btn');
-  if (voteBtn) {
-    voteBtn.textContent = 'Voting Closed';
-    voteBtn.disabled = true;
-    voteBtn.style.opacity = '0.7';
-    voteBtn.style.cursor = 'not-allowed';
-  }
-
-  const voteLink = document.querySelector('.vote-link');
-  if (voteLink) {
-    voteLink.removeAttribute('href');
-    voteLink.addEventListener('click', (e) => e.preventDefault());
-    voteLink.style.pointerEvents = 'none';
-  }
-})();
+// Initial vote link + state (also updated on slide changes)
+updateVoteLink();
+updateVoteButtonState();
