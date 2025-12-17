@@ -3,6 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "type": "commonjs",
+  "scripts": {
+    "build": "node -e \"console.log('No build step (static HTML/CSS/JS)')\""
+  },
   "dependencies": {
     "@vercel/kv": "^3.0.0"
   }
